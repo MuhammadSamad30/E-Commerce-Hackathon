@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const CartForm = () => {
   return (
@@ -29,11 +30,15 @@ const CartForm = () => {
               <tbody>
                 <tr>
                   <td className="py-4 px-4 flex items-center space-x-4">
-                    <img
-                      src="/Asgaard sofa 1.png"
-                      alt="Product"
-                      className="w-16 h-16 rounded-lg bg-gray-100"
-                    />
+                    <div className="relative w-16 h-16">
+                      <Image
+                        src="/Asgaard sofa 1.png"
+                        alt="Product"
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg bg-gray-100"
+                      />
+                    </div>
                     <span className="font-medium hidden md:block text-gray-800">
                       Asgaard Sofa
                     </span>
