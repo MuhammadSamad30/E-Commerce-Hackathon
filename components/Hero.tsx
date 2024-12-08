@@ -15,10 +15,13 @@ export default function Hero() {
 
       {/* Image Section */}
       <div className="mt-8 md:mt-0" id="hero-img">
-        <img
+        <Image
           src="/hero-img.png"
           alt="Rocket single seater"
           className="w-full max-w-lg md:max-w-4xl"
+          width={800} // Add width for Image component
+          height={600} // Add height for Image component
+          priority 
         />
       </div>
     </section>

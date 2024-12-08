@@ -4,6 +4,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoCartOutline, IoSearch } from "react-icons/io5";
 import { TbUserExclamation } from "react-icons/tb";
 import { FiMenu, FiX } from "react-icons/fi";
+import Link from "next/link"; // Import Link for navigation
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,22 +29,30 @@ const Nav = () => {
           </div>
 
           <div className="hidden md:flex space-x-6 text-lg ml-[40%] font-semibold">
-            <a href="/">Home</a>
-            <a href="/shop">Shop</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <Link href="/" passHref>
+            Home
+            </Link>
+            <Link href="/shop" passHref>
+            Shop
+            </Link>
+            <Link href="/about" passHref>
+            About
+            </Link>
+            <Link href="/contact" passHref>
+            Contact
+            </Link>
           </div>
 
           <div className="flex space-x-4">
-            <a href="/account" className="text-2xl">
-              <TbUserExclamation />
-            </a>
-            <a href="#" className="text-2xl">
+            <Link href="/account" className="text-2xl" passHref>
+                <TbUserExclamation />
+            </Link>
+            <Link href="#" className="text-2xl">
               <IoSearch />
-            </a>
-            <a href="#" className="text-2xl">
+            </Link>
+            <Link href="#" className="text-2xl">
               <FaRegHeart />
-            </a>
+            </Link>
             <button onClick={toggleCart} className="text-2xl">
               <IoCartOutline />
             </button>
@@ -57,18 +66,18 @@ const Nav = () => {
         } transition-transform duration-300 ease-in-out md:hidden`}
       >
         <div className="flex flex-col space-y-4 p-6 mt-[20%] text-lg font-semibold">
-          <a href="/" className="hover:underline">
-            Home
-          </a>
-          <a href="/shop" className="hover:underline">
-            Shop
-          </a>
-          <a href="/about" className="hover:underline">
-            About
-          </a>
-          <a href="/contact" className="hover:underline">
-            Contact
-          </a>
+          <Link href="/" className="hover:underline" passHref>
+          Home
+          </Link>
+          <Link href="/shop" className="hover:underline" passHref>
+          Shop
+          </Link>
+          <Link href="/about" className="hover:underline" passHref>
+          About
+          </Link>
+          <Link href="/contact" className="hover:underline" passHref>
+          Contact
+          </Link>
         </div>
       </div>
 
@@ -100,18 +109,12 @@ const Nav = () => {
             </div>
           </div>
           <div className="mt-4 flex gap-4 justify-center">
-            <a
-              href="/cart"
-              className="px-6 py-2 text-center text-black border-2 border-[#222] rounded-xl hover:bg-gray-100 transition-all"
-            >
-              View Cart
-            </a>
-            <a
-              href="/checkout"
-              className="px-4 py-2 text-center text-black border-2 border-[#222] rounded-xl hover:bg-gray-100 transition-all"
-            >
-              Checkout
-            </a>
+            <Link href="/cart" className="px-6 py-2 text-center text-black border-2 border-[#222] rounded-xl hover:bg-gray-100 transition-all" passHref>
+                View Cart
+            </Link>
+            <Link href="/checkout" className="px-4 py-2 text-center text-black border-2 border-[#222] rounded-xl hover:bg-gray-100 transition-all" passHref>
+                Checkout
+            </Link>
           </div>
         </div>
       </div>
