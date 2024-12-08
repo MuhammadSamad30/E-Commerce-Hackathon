@@ -1,25 +1,37 @@
-import React from 'react'
-import { IoIosArrowForward } from 'react-icons/io'
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { IoIosArrowForward } from 'react-icons/io';
 
-const blog = () => {
+const Blog = () => {
   return (
     <section
       className="relative bg-cover bg-center text-center py-20 px-6"
       style={{
         backgroundImage: "url('/Shop-banner.png')",
-      }}>
-        <img src="/Blog-logo.png" alt="Logo" className='flex items-center md:ml-[46%] ml-[32%]' />
+      }}
+    >
+      <div className="flex items-center justify-center">
+        <Image
+          src="/Blog-logo.png"
+          alt="Logo"
+          width={120}
+          height={120} 
+          priority 
+        />
+      </div>
 
       <div className="inline-flex items-center">
-        <a href='/' className="text-2xl font-bold">Home 
-        </a>
-        <IoIosArrowForward/>
-        <a href='/shop' className="text-2xl font-normal">Cart</a>
-        
+        <Link href="/" className="text-2xl font-bold">
+          Home
+        </Link>
+        <IoIosArrowForward />
+        <Link href="/shop" className="text-2xl font-normal">
+          Cart
+        </Link>
       </div>
-      
     </section>
-  )
-}
+  );
+};
 
-export default blog
+export default Blog;

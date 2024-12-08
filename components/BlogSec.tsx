@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; 
 
 const BlogSec: React.FC = () => {
   const blogPosts = [
@@ -66,12 +67,16 @@ const BlogSec: React.FC = () => {
         <div className="lg:col-span-2">
           {blogPosts.map((post) => (
             <div key={post.id} className="mb-8">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-100 object-cover rounded-lg mb-4"
-              />
-              <div className="flex items-center text-sm text-gray-500 mb-2">
+              <div className="relative w-full h-80">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  layout="fill" 
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="flex items-center text-sm text-gray-500 mb-2 mt-4">
                 <span className="mr-4">Admin</span>
                 <span className="mr-4">{post.date}</span>
                 <span>{post.category}</span>
@@ -102,11 +107,15 @@ const BlogSec: React.FC = () => {
             <ul className="space-y-4">
               {recentPosts.map((post) => (
                 <li key={post.id} className="flex items-center">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-12 h-12 object-cover rounded-lg mr-4"
-                  />
+                  <div className="relative w-12 h-12 mr-4">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-lg"
+                    />
+                  </div>
                   <div>
                     <h4 className="text-sm font-semibold">{post.title}</h4>
                     <span className="text-xs text-gray-500">{post.date}</span>

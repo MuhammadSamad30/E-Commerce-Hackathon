@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { CiClock2 } from 'react-icons/ci';
 import { SlCalender } from 'react-icons/sl';
 
@@ -6,7 +7,7 @@ const BlogHome = () => {
   const blogs = [
     {
       id: 1,
-      image: '/blog (1).png', 
+      image: '/blog (1).png',
       title: 'Going all-in with millennial design',
       time: '5 min',
       date: '12th Oct 2022',
@@ -42,17 +43,27 @@ const BlogHome = () => {
             key={blog.id}
             className="bg-white rounded-lg shadow-md hover:shadow-lg transition p-2"
           >
-            <img
-              src={blog.image}
-              alt={blog.title}
-              className="w-full h-[60%] object-cover rounded-t-lg"
-            />
+            <div className="relative w-full h-48">
+              <Image
+                src={blog.image}
+                alt={blog.title}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-t-lg"
+              />
+            </div>
             <div className="mt-4 text-center">
               <h3 className="text-lg font-medium">{blog.title}</h3>
-              <button className="text-xl font-bold underline text-gray-600 mt-2">Read More</button>
+              <button className="text-xl font-bold underline text-gray-600 mt-2">
+                Read More
+              </button>
               <div className="flex justify-center items-center gap-4 text-gray-500 text-sm mt-4">
-                <span><CiClock2 className='inline-flex gap-1'/> {blog.time}</span>
-                <span><SlCalender className='inline-flex'/> {blog.date}</span>
+                <span>
+                  <CiClock2 className="inline-flex gap-1" /> {blog.time}
+                </span>
+                <span>
+                  <SlCalender className="inline-flex" /> {blog.date}
+                </span>
               </div>
             </div>
           </div>
