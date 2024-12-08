@@ -7,12 +7,11 @@ const ContactForm = () => {
   return (
     <div className="p-6 lg:p-12 bg-gray-50">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Left Section - Contact Information */}
-        <div className="space-y-8 ml-[10%] w-full">
-          <h2 className="text-center w-full lg:text-left md:text-center md:ml-[70%] text-2xl font-bold text-gray-800">
+        <div className="space-y-8 w-full">
+          <h2 className="text-center w-full lg:text-left md:text-center md:ml-[80%] text-2xl font-bold text-gray-800">
             Get In Touch With Us
           </h2>
-          <p className="text-center  w-full lg:text-left ml-[50%] md:text-center text-gray-600">
+          <p className="text-center  w-full lg:text-left md:ml-[50%] md:text-center text-gray-600">
             For More Information About Our Product & Services, Please Feel Free
             To Drop Us An Email. Our Staff Always Be There To Help You Out. Do
             Not Hesitate!
