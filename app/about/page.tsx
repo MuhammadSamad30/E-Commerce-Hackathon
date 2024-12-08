@@ -1,5 +1,5 @@
 import React from 'react'
-import Blog from "@/components/blog"
+import Blog from "@/components/Blog"
 import FourthSecShop from '@/components/FourthSecShop'
 import BlogSec from '@/components/BlogSec'
 
