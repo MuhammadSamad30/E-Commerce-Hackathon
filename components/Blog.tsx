@@ -26,8 +26,8 @@ const Blog = () => {
           Home
         </Link>
         <IoIosArrowForward />
-        <Link href="/shop" className="text-2xl font-normal">
-          Cart
+        <Link href="/about" className="text-2xl font-normal">
+          Blog
         </Link>
       </div>
     </section>

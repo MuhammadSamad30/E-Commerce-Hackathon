@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import Next.js Image component
 
 const productImages = [
   {
@@ -63,32 +64,40 @@ const relatedProducts = [
 const SingleProduct = () => {
   return (
     <div className="p-4 md:p-8 bg-gray-100">
+      {/* Main Product Section */}
       <div className="flex flex-col md:flex-row gap-6 bg-white p-4 rounded-lg shadow-md">
+        {/* Product Images */}
         <div className="flex-1">
           {productImages
             .filter((img) => img.isMain)
             .map((image) => (
-              <img
+              <Image
                 key={image.id}
                 src={image.src}
                 alt={image.alt}
                 className="w-full rounded-lg"
+                width={500}
+                height={500}
+                priority
               />
             ))}
-          <div className="flex gap-2 mt-4">
+          <div className="flex gap-1 mt-4">
             {productImages
               .filter((img) => !img.isMain)
               .map((image) => (
-                <img
+                <Image
                   key={image.id}
                   src={image.src}
                   alt={image.alt}
-                  className="w-20 h-20 rounded-lg object-cover border"
+                  className="md:w-20 md:h-20 w-16 h-16 rounded-lg object-cover border"
+                  width={80}
+                  height={80}
                 />
               ))}
           </div>
         </div>
 
+        {/* Product Info */}
         <div className="flex-1 space-y-4">
           <h1 className="text-2xl font-bold">Asgaard Sofa</h1>
           <p className="text-gray-600">
@@ -117,13 +126,14 @@ const SingleProduct = () => {
               <span className="px-3">1</span>
               <button className="bg-gray-200 px-3 py-1 rounded-lg">+</button>
             </div>
-          <button className="w-[30%] ml-[30%] my-2 text-black py-2 rounded-3xl border-2">
-            Add to Cart
-          </button>
+            <button className="w-full md:w-[30%] mt-4 text-black py-2 rounded-3xl border-2">
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
 
+      {/* Product Description */}
       <div className="bg-white p-4 mt-6 rounded-lg shadow-md">
         <div className="flex gap-4 border-b pb-2">
           <button className="font-semibold border-b-2 border-black">
@@ -135,31 +145,39 @@ const SingleProduct = () => {
         <p className="mt-4 text-gray-600">
           Designed for both comfort and style, perfect for your living space.
         </p>
-        <div className="flex ">
-
-        <img
-          src={"/Cloud-sofa.png"}
-          className="w-full h-60 border-3 object-cover rounded-lg mb-4"
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          <Image
+            src="/Cloud-sofa.png"
+            alt="Cloud Sofa"
+            className="rounded-lg"
+            width={500}
+            height={300}
           />
-        <img
-          src={"/Cloud-sofa.png"}
-          className="w-full h-60 border-3 object-cover rounded-lg mb-4"
+          <Image
+            src="/Cloud-sofa.png"
+            alt="Cloud Sofa"
+            className="rounded-lg"
+            width={500}
+            height={300}
           />
         </div>
       </div>
 
+      {/* Related Products */}
       <div className="mt-6">
         <h2 className="text-xl font-bold mb-4">Related Products</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {relatedProducts.map((product) => (
             <div
               key={product.id}
               className="bg-white p-4 rounded-lg shadow-md text-center"
             >
-              <img
+              <Image
                 src={product.src}
                 alt={product.name}
                 className="w-full h-40 object-cover rounded-lg mb-4"
+                width={200}
+                height={160}
               />
               <p className="font-semibold">{product.name}</p>
               <p className="text-gray-600">{product.price}</p>

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const CartForm = () => {
   return (
@@ -78,7 +79,7 @@ const CartForm = () => {
           </div>
         </div>
 
-        <div className="bg-yellow-100 p-6 rounded-lg shadow-md space-y-6">
+        <div className="bg-yellow-100 p-10 rounded-lg shadow-md space-y-8">
           <h2 className="text-2xl items-center justify-center ml-[28%] md:ml-[30%] font-bold text-gray-800">
             Cart Totals
           </h2>
@@ -86,15 +87,15 @@ const CartForm = () => {
             <span className="text-gray-700">Subtotal</span>
             <span className="text-gray-800 font-medium">Rs. 250,000.00</span>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between pb-6">
             <span className="text-gray-700">Total</span>
             <span className="text-[#B88E2F] font-bold text-lg">
               Rs. 250,000.00
             </span>
           </div>
-          <button className="w-[50%] ml-[25%] text-black border-2 border-[#222] py-2 rounded-xl">
+          <Link href={"/checkout"} className="w-[50%] md:ml-[30%] ml-[25%] mt-5 gap-2 m-10 text-black border-2 border-[#222] py-2 px-4 my-6 rounded-xl">
             Check Out
-          </button>
+          </Link>
         </div>
       </div>
     </div>

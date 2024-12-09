@@ -17,7 +17,7 @@ const Contact = () => {
           alt="Logo"
           width={200}
           height={100} 
-          className="md:ml-[1%] ml-[10%]"
+          className="md:ml-[1%] ml-[5%]"
         />
       </div>
 
